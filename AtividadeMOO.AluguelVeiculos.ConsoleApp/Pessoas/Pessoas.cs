@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
+namespace AtividadeMOO.AluguelVeiculos.ConsoleApp.Pessoas
 {
-    public abstract class Pessoas
+    public abstract class Pessoa
     {
         public Guid Id { get; }
         public string? Nome { get; set; }
@@ -16,7 +16,7 @@ namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
         public DateOnly DataNasc { get; }
         public string? Endereco { get; set; }
 
-        public Pessoas(string? nome, string? numTel, string? email, string? cpf, DateOnly dataNasc, string? endereco)
+        public Pessoa(string? nome, string? numTel, string? email, string? cpf, DateOnly dataNasc, string? endereco)
         {
             Nome = nome;
             NumTel = numTel;

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AtividadeMOO.AluguelVeiculos.ConsoleApp.Pagamentos;
+using AtividadeMOO.AluguelVeiculos.ConsoleApp.Veiculos;
 
-namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
+namespace AtividadeMOO.AluguelVeiculos.ConsoleApp.Reservas
 {
     public class Reserva
     {
         public Guid Id { get; }
-        public Cliente? Cliente { get; set; }
-
         public Veiculo? Veiculo { get; set; }
 
         public decimal ValorTotal { get; set; }
@@ -19,9 +19,10 @@ namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
 
         public DateOnly DataFim { get; set; }
 
-        public Reserva (Cliente? cliente, Veiculo? veiculo, decimal valorTotal, DateOnly dataInicio, DateOnly dataFim)
+        public List<Pagamento> Pagamentos { get; set; } = new List<Pagamento>();
+
+        public Reserva(Veiculo? veiculo, decimal valorTotal, DateOnly dataInicio, DateOnly dataFim)
         {
-            Cliente = cliente;
             Veiculo = veiculo;
             ValorTotal = valorTotal;
             DataInicio = dataInicio;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
+namespace AtividadeMOO.AluguelVeiculos.ConsoleApp.Veiculos
 {
     public class Veiculo
     {
@@ -23,16 +23,21 @@ namespace AtividadeMOO.AluguelVeiculos.ConsoleApp
         public double KmsRodados { get; set; }
 
         public bool Alugado { get; private set; }
-        
-        public Veiculo(string? modelo, string? marca, string? placa, string? cor, DateOnly anoLanc, double kmsRodados)
+
+        public Veiculo(string? modelo, string? marca, string? placa, string? cor, int anoLanc, double kmsRodados)
         {
             Id = Guid.NewGuid();
             Modelo = modelo;
             Marca = marca;
             Placa = placa;
             Cor = cor;
-            AnoLanc = anoLanc.Year;
+            AnoLanc = anoLanc;
             KmsRodados = kmsRodados;
+        }
+
+        public override string ToString()
+        {
+            return $"Veículo: {Modelo}\nMarca: {Marca}\nPlaca: {Placa}\nCor: {Cor}\nAno de lançamento: {AnoLanc}\nKms Rodados: {KmsRodados}";
         }
     }
 }
